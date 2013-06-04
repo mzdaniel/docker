@@ -1,4 +1,5 @@
 package docker
+package push
 
 import (
 	"encoding/json"
