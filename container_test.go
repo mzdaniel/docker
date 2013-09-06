@@ -1437,6 +1437,7 @@ func TestPrivilegedCanMount(t *testing.T) {
 	runtime := mkRuntime(t)
 	defer nuke(runtime)
 	if output, _ := runContainer(runtime, []string{"-i", "-t", "-privileged", "-v", "/tmp", "-lxc-conf=lxc.aa_profile=unconfined", "_", "sh", "-c", "mount -t tmpfs none /tmp && echo ok"}, t); output != "ok\n" {
+		t.log(output)
 		t.Fatal("Could not mount into privileged container")
 	}
 }
