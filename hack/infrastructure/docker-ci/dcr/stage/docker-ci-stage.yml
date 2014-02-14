@@ -7,6 +7,10 @@ team-ci:
   command: []
   env:
     - "DEPLOYMENT=staging"
+    - "IRC_CHANNEL=docker-testing-stage"
+    - "$WEB_USER"
+    - "$WEB_IRC_PWD"
+    - "$BUILDBOT_PWD"
     - "$AWS_ACCESS_KEY"
     - "$AWS_SECRET_KEY"
     - "$GPG_PASSPHRASE"
@@ -15,3 +19,4 @@ team-ci:
     - "$SMTP_USER"
     - "$SMTP_PWD"
     - "$EMAIL_RCP"
+    - "$IRC_PWD"

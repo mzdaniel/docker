@@ -17,7 +17,7 @@ ROOT_PATH = '/data/backup/docker-ci'
 TODAY = str(datetime.today())[:10]
 BACKUP_FILE = '{}/docker-ci_{}.tgz'.format(ROOT_PATH, TODAY)
 BACKUP_LINK = '{}/docker-ci.tgz'.format(ROOT_PATH)
-BACKUP_BUCKET = 'ci-backup'
+ENV('BACKUP_BUCKET')
 ENV('BACKUP_AWS_ID')
 ENV('BACKUP_AWS_SECRET')
 
