@@ -1,0 +1,22 @@
+team-ci:
+  image: "docker-ci/docker-ci"
+  release_name: "docker-ci-stage2"
+  ports: ["80","2322:22","8111:8011"]
+  register: "80"
+  volumes: ["/run:/var/socket","/home/docker-ci:/data/docker-ci"]
+  command: []
+  env:
+    - "DEPLOYMENT=staging"
+    - "IRC_CHANNEL=docker-testing-stage"
+    - "$WEB_USER"
+    - "$WEB_IRC_PWD"
+    - "$BUILDBOT_PWD"
+    - "$AWS_ACCESS_KEY"
+    - "$AWS_SECRET_KEY"
+    - "$GPG_PASSPHRASE"
+    - "$BACKUP_AWS_ID"
+    - "$BACKUP_AWS_SECRET"
+    - "$SMTP_USER"
+    - "$SMTP_PWD"
+    - "$EMAIL_RCP"
+    - "$IRC_PWD"
